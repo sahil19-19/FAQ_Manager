@@ -9,6 +9,6 @@ db();
 
 const PORT = process.env.PORT | 3000 ;
 
-app.listen(port , () => {
+app.listen(PORT , () => {
     console.log(`app running on http://localhost:${PORT}`);
 })
