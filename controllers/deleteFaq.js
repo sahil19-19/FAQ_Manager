@@ -1,8 +1,17 @@
-const Faq = require('../models/faq')
+// const Faq = require('../models/faq')
 
-const delete_faq = (req,res) => {
-    const {id} = req.params;
-    
+const delete_faq = async (req,res) => {
+    try {
+        await res.faq.deleteOne(); 
+        // res.faq is Faq.findById(req.params.id);
+        res.status(202).json({
+            message : "user deleted"
+        })
+    } catch (err){
+        console.log(err);
+        res.status(500).json({
+            error : err.message
+        })
+    }
 }
-
 module.exports = delete_faq;
