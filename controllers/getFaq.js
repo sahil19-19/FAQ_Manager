@@ -3,10 +3,13 @@ const Faq = require('../models/faq')
 
 const get_faq = async (req, res) => {
     try {
-        const result = await Faq.find();
-        res.status(200).json(result);
+        const {lang} = req.query || "en";
+        const faqs = await Faq.find();
+        const translated_faqs = faqs.map(faq => faq.getTranslation(lang));
+        res.status(200).json(translated_faqs);
     } catch (err) {
-        res.status(500).json(err);
+        console.log(err);
+        res.status(500).json(err.message);
     }
 };
 

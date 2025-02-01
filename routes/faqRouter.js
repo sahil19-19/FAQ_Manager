@@ -4,9 +4,13 @@ const router = express.Router();
 const create_faq = require('../controllers/createFaq');
 const delete_faq = require('../controllers/deleteFaq');
 const get_faq = require('../controllers/getFaq');
-const get_id = require('../middleware/getId')
+// const get_one_faq = require('../controllers/getFaq');
+const get_id = require('../middleware/getId');
 
+// to get the list of all FAQS
 router.get('/',get_faq);
+
+// router.get('/:id',get_id, get_one_faq);
 
 router.post('/',create_faq);
 
