@@ -4,7 +4,7 @@ const delete_faq = async (req,res) => {
     try {
         await res.faq.deleteOne(); 
         // res.faq is Faq.findById(req.params.id);
-        res.status(202).json({
+        res.status(200).json({
             message : "user deleted"
         })
     } catch (err){

@@ -1,10 +1,22 @@
 const Faq = require('../models/faq');
+const translateText = require('../services/translate')
 
 const create_faq = async (req,res) =>{
     try{
         const {question, answer} = req.body;
+        const translations = {
+            bn : {
+                question_bn : await translateText(question,"bn"),
+                answer_bn : await translateText(answer,"bn")
+            },
+            hi : {
+                question_hi : await translateText(question,"hi"),
+                answer_hi : await translateText(answer,"hi")
+            }
+        };
+
         const newfaq = new Faq({
-            question, answer 
+            question, answer , translations
         })
         const curfaq = await newfaq.save();
         res.status(201).json(curfaq);
@@ -12,9 +24,7 @@ const create_faq = async (req,res) =>{
         res.status(400).json({
             error : err.message
         })
-        // console.log(err.message);
     }
-    // res.status(200).json('hello');
 }
 
 module.exports = create_faq;
