@@ -109,7 +109,7 @@ npm run dev  # To run using nodemon
 node app.js  # To run simply
 ```
 
-###  ** 6️⃣ Running Using Docker**
+### **6️⃣ Running Using Docker**
 If you prefer to use Docker, run:
 
 ```
@@ -118,6 +118,8 @@ docker-compose up
 in FAQ_Manager folder
 
 ## 📌 **API Usage Examples**
+
+Access the application at `http://localhost:3000`.
 
 ### **Get all FAQs**
 ```bash
@@ -176,4 +178,48 @@ Content-Type: application/json
 DELETE /api/faqs/:id
 ```
 ![delFaq](https://github.com/user-attachments/assets/6fc50a2b-83a7-4e6b-80b5-322961bbacf5)
+
+
+## 📌 **Testing and Linting**
+
+To run unit tests for the application, use:
+
+```
+npm test
+```
+
+To run ESlint, use:
+```
+npm run lint
+```
+
+
+## 📌 **Contribution Guidelines**
+To contribute please follow these steps:
+
+1. **Fork the repository** and clone it locally.
+2. **Create a new branch** for your feature:
+
+   ```bash
+   git checkout -b new-feature
+   ```
+   
+4. **Commit your changes** with meaningful messages:
+
+   ```bash
+   git commit -m "feat: Add support for German translations"
+   ```
+   
+5. **Run tests before pushing**:
+
+   ```bash
+   pytest
+   ```
+   
+6. **Push your branch** and create a Pull Request:
+
+   ```bash
+   git push origin new-feature
+   ```
+
 
