@@ -1,5 +1,6 @@
 const Faq = require('../models/faq');
 const translateText = require('../services/translate')
+const redisClient = require('../config/redis')
 
 const create_faq = async (req,res) =>{
     try{
@@ -15,10 +16,22 @@ const create_faq = async (req,res) =>{
             }
         };
 
-        const newfaq = new Faq({
+        const new_faq = new Faq({
             question, answer , translations
         })
-        const curfaq = await newfaq.save();
+        const curfaq = await new_faq.save();
+
+        // deleting keys in cache
+        const supported_languages = [
+            'en',
+            'hi',
+            'bn'
+        ]
+
+        supported_languages.forEach(language => {
+            redisClient.del(`faqs:${language}`)
+        });
+
         res.status(201).json(curfaq);
     } catch(err){
         res.status(400).json({
