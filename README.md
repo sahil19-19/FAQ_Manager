@@ -1,4 +1,4 @@
-# FAQ_Manager: MERN Stack Multilingual FAQ Manager
+![image](https://github.com/user-attachments/assets/eef37b79-8f69-4f5f-b4c9-bdddd8002a4e)# FAQ_Manager: MERN Stack Multilingual FAQ Manager
 
 ## 🚀 Overview
 This is a NodeJS/Express-based FAQ management system with **multilingual support** and **Redis caching** for improved performance.
@@ -117,5 +117,63 @@ docker-compose up
 ```
 in FAQ_Manager folder
 
+## 📌 **API Usage Examples**
 
+### **Get all FAQs**
+```bash
+# Get FAQs in English (default)
+GET /api/faqs/
+```
+![getFaqsen](https://github.com/user-attachments/assets/817b6f91-c1f1-4839-b643-5db9883d9fa6)
+
+
+```
+# Get FAQs in Hindi
+GET /api/faqs/?lang=hi
+```
+![getFaqshi](https://github.com/user-attachments/assets/e0ce8df5-b89b-4e3d-8652-89890d42660c)
+
+```
+# Get FAQs in Bengali
+GET /api/faqs/?lang=bn
+```
+![getFaqsbn](https://github.com/user-attachments/assets/c4d30303-873b-406c-9909-e8aecf835d3b)
+
+
+### **Get a single FAQ**
+```bash
+# Get FAQ in English (default)
+GET /api/faqs/:id
+```
+![getOneen](https://github.com/user-attachments/assets/4488ec83-ca94-483c-a8f9-7e99f5a700ce)
+
+```
+# Get FAQs in Hindi
+GET /api/faqs/:id?lang=hi
+```
+![getOnehi](https://github.com/user-attachments/assets/93619e5d-ab47-41e2-876b-2e5aaee446cc)
+
+```
+# Get FAQs in Bengali
+GET /api/faqs/:id?lang=bn
+```
+![getOnebn](https://github.com/user-attachments/assets/d12e34a9-2d12-4af4-be84-d02744a5c8fb)
+
+
+### **Create FAQ**
+```bash
+POST /api/faqs/
+Content-Type: application/json
+
+{
+  "question": "What is your name?",
+  "answer": "John"
+}
+```
+
+### **Delete FAQ**
+```bash
+DELETE /api/faqs/:id
+```
+![delFaq](https://github.com/user-attachments/assets/6fc50a2b-83a7-4e6b-80b5-322961bbacf5)
 
