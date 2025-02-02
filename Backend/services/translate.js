@@ -13,7 +13,8 @@ const proxyList = [
     '23.247.137.142:80',
     '23.247.136.254:80',
     '180.210.89.215:3128',
-    '51.89.255.67:80'
+    '51.89.255.67:80',
+    '110.143.204.150:8888'
 ];
 
 
@@ -23,7 +24,11 @@ const translateText = async (text, target_language) => {
 
         const temp = 'http://';
         const temp_agent = temp.concat(randomProxy);
-        const agent = new HttpProxyAgent(temp_agent);
+        let agent;
+        
+        agent = new HttpProxyAgent(temp_agent);
+        // for custom proxy
+        // const agent = new HttpProxyAgent('http://110.143.204.150:8888');
 
         // translate using proxy
         const translation = await translate(text, { 
