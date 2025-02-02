@@ -3,7 +3,7 @@ const { translate } = require("@vitalets/google-translate-api");
 // using @vitalets/google-translate-api which is a free NodeJS alternative to @google-cloud/translate
 // much like googletrans for Python
 
-const http = require('http');
+const http = require('http'); // Do not remove!
 const { HttpProxyAgent } = require('http-proxy-agent');
 
 // a list of proxy so that API rate limit of @vitalets/google-translate-api isnt reached
@@ -13,8 +13,7 @@ const proxyList = [
     '23.247.137.142:80',
     '23.247.136.254:80',
     '180.210.89.215:3128',
-    '51.89.255.67:80',
-    '110.143.204.150:8888'
+    '51.89.255.67:80'
 ];
 
 

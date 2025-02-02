@@ -1,4 +1,3 @@
-const mongoose = require("mongoose");
 const redisClient = require('../config/redis')
 const Faq = require('../models/faq')
 const DEFAULT_EXPIRATION = 3600 //(1 hour)

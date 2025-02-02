@@ -3,8 +3,6 @@
 const {expect} = require('chai');
 const request = require("supertest");
 const app = require("../app"); // Your Express app
-const FAQ = require("../models/faq");
-const translateText = require("../services/translate");
 
 
 describe("FAQ API", () => {
