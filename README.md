@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/eef37b79-8f69-4f5f-b4c9-bdddd8002a4e)# FAQ_Manager: MERN Stack Multilingual FAQ Manager
+# FAQ_Manager: MERN Stack Multilingual FAQ Manager
 
 ## 🚀 Overview
 This is a NodeJS/Express-based FAQ management system with **multilingual support** and **Redis caching** for improved performance.
