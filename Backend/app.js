@@ -11,6 +11,8 @@ app.use('/api/faqs',faq_route);
 
 const PORT = process.env.PORT | 3000 ;
 
-app.listen(PORT , () => {
+const server = app.listen(PORT , () => {
     console.log(`app running on http://localhost:${PORT}`);
 })
+
+module.exports = server;

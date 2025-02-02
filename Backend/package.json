@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha tests/*.test.js --timeout 10000",
     "dev": "nodemon app.js"
   },
   "keywords": [],
@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "@vitalets/google-translate-api": "^9.2.1",
+    "chai": "^4.5.0",
     "cors": "^2.8.5",
     "express": "^4.21.2",
     "http-proxy-agent": "^7.0.2",
@@ -28,6 +29,8 @@
     "dotenv": "^16.4.7",
     "eslint": "^9.19.0",
     "globals": "^15.14.0",
-    "nodemon": "^3.1.9"
+    "mocha": "^11.1.0",
+    "nodemon": "^3.1.9",
+    "supertest": "^7.0.0"
   }
 }

@@ -5,7 +5,6 @@ const { translate } = require("@vitalets/google-translate-api");
 
 const http = require('http');
 const { HttpProxyAgent } = require('http-proxy-agent');
-const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 // a list of proxy so that API rate limit of @vitalets/google-translate-api isnt reached
 // https://free-proxy-list.net/
@@ -21,20 +20,15 @@ const proxyList = [
 const translateText = async (text, target_language) => {
     try {
         const randomProxy = proxyList[Math.floor(Math.random() * proxyList.length)];
-        // console.log(randomProxy);
-        delay(1000); // 1 second delay
 
         const temp = 'http://';
         const temp_agent = temp.concat(randomProxy);
         const agent = new HttpProxyAgent(temp_agent);
-        // const translation = await translate(text, { 
-        //     to: target_language,
-        // });
 
         // translate using proxy
         const translation = await translate(text, { 
             to: target_language,
-            fetchOptions : agent,
+            fetchOptions :{ agent },
         });
         return translation.text;
     } catch (err) {
