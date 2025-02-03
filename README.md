@@ -173,6 +173,9 @@ Content-Type: application/json
 }
 ```
 
+![getFaq](https://github.com/user-attachments/assets/4128dca5-fbec-4cae-bcb6-af64a0dfbec2)
+
+
 ### **Delete FAQ**
 ```bash
 DELETE /api/faqs/:id
@@ -213,7 +216,7 @@ To contribute please follow these steps:
 5. **Run tests before pushing**:
 
    ```bash
-   pytest
+   npm test
    ```
    
 6. **Push your branch** and create a Pull Request:
