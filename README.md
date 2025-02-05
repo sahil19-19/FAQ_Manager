@@ -5,7 +5,7 @@ This is a NodeJS/Express-based FAQ management system with **multilingual support
 
 ### **Key Features**
 ✅ **Multilingual Support** (English, Hindi, Bengali)   
-✅ **Fast API with Caching** (Redis for caching)  
+✅ **API with Caching** (Redis for caching)  
 ✅ **Dockerized** (Easily run using Docker)  
 ✅ **Unit Testing & Linting** (chai/mocha, ESlint)  
 
