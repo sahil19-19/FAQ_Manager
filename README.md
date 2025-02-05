@@ -5,7 +5,7 @@ This is a NodeJS/Express-based FAQ management system with **multilingual support
 
 ### **Key Features**
 ✅ **Multilingual Support** (English, Hindi, Bengali)   
-✅ **API with Caching** (Redis for caching)  
+✅ **REST API with Caching** (Redis for caching)  
 ✅ **Dockerized** (Easily run using Docker)  
 ✅ **Unit Testing & Linting** (chai/mocha, ESlint)  
 
@@ -51,7 +51,6 @@ FAQ_Manager/
 - Express.js
 - MongoDB
 - Redis
-- Google Gemini API
 - Docker
 
 ## 📌 Prerequisites
